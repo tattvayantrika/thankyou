@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Tattva Yantrika</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/1a1a2e/00d4ff?text=TY">
+    
+    <style>
+        /* Root variables for consistent theming */
+        :root {
+            --color-gold: #FFD700;
+            --color-cyan-accent: #00d4ff;
+            --color-text-light: #ffffff;
+            --color-text-medium: #c0c0c0;
+            --font-main: 'Segoe UI', 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* General body and reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: linear-gradient(135deg, #0d0d1a 0%, #10102e 25%, #1a1a3f 50%, #15224f 75%, #2a1a4a 100%); background-attachment: fixed; color: var(--color-text-light); line-height: 1.8; overflow-x: hidden; }
+
+        /* Header (Consistent with other pages) */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 30, 0.5);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            z-index: 1000;
+        }
+        .nav-container { display: flex; justify-content: center; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-text-group { line-height: 1.3; display: flex; flex-direction: column; }
+        .logo-english { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, var(--color-cyan-accent), var(--color-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .logo-hindi { font-size: 1.1rem; font-weight: 600; color: var(--color-gold); }
+        .logo-img { width: 60px; height: 60px; border-radius: 50%; }
+        
+        /* Main Content Wrapper */
+        .main-content { padding: 140px 2rem 2rem; display: flex; justify-content: center; align-items: flex-start; }
+        
+        /* Terms and Conditions Card */
+        .terms-card {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(15, 15, 35, 0.6);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 2.5rem 3rem;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header { text-align: center; margin-bottom: 2.5rem; }
+        .card-title { font-size: 2.8rem; font-weight: 800; color: var(--color-cyan-accent); margin-bottom: 0.5rem; }
+        .card-subtitle { font-size: 1rem; color: var(--color-text-medium); }
+
+        /* Content Styling */
+        .terms-content h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-cyan-accent);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .terms-content p, .terms-content li {
+            font-size: 1.05rem;
+            color: var(--color-text-medium);
+            margin-bottom: 1rem;
+        }
+        .terms-content ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        .terms-content strong {
+            color: var(--color-text-light);
+            font-weight: 600;
+        }
+        .terms-content a {
+            color: var(--color-gold);
+            text-decoration: none;
+        }
+        .terms-content a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer { margin-top: 4rem; padding: 3rem 2rem 2rem; background: rgba(0, 0, 0, 0.3); text-align: center; }
+        .footer p { color: var(--color-text-medium); }
+        .footer a { color: var(--color-cyan-accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content { padding: 150px 1rem 1rem; }
+            .terms-card { padding: 2rem 1.5rem; }
+            .card-title { font-size: 2.2rem; }
+            .terms-content h2 { font-size: 1.4rem; }
+            .terms-content p, .terms-content li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo" aria-label="Tattva Yantrika">
+                <img src="LOGO-removebg-preview.png" alt="Tattva Yantrika Logo" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-english">Tattva Yantrika</span>
+                    <span class="logo-hindi">तत्त्व यांत्रिक</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="terms-card">
+            <div class="card-header">
+                <h1 class="card-title">Terms and Conditions</h1>
+                <p class="card-subtitle">Last Updated: 10 October 2025</p>
+            </div>
+
+            <div class="terms-content">
+                <p>Welcome to Tattva Yantrika. These Terms and Conditions ("Terms") govern your use of our Project Assistance services ("Service"). By submitting a request, you agree to be bound by these Terms. Please read them carefully.</p>
+
+                <h2>1. Scope of Service</h2>
+                <p>Tattva Yantrika provides expert technical assistance, guidance, and facilitation for engineering projects upon the user's request. Our service is designed to support and enhance your project work, not to complete academic assignments on your behalf. The final implementation and use of our assistance are solely your responsibility.</p>
+
+                <h2>2. Intellectual Property and Ownership</h2>
+                <p>You, the user, retain full ownership of all project materials, data, and intellectual property you provide to us, as well as the final project deliverables. We claim no ownership over your work. Our role is strictly that of a technical facilitator.</p>
+
+                <h2>3. User Responsibilities and Limitation of Liability</h2>
+                <ul>
+                    <li>You agree to use our services for legitimate purposes only and in full compliance with the laws of India.</li>
+                    <li>The assistance provided is based on the information you submit. Tattva Yantrika is not liable for any inaccuracies in the final output resulting from incomplete or incorrect information provided by you.</li>
+                    <li>You agree that Tattva Yantrika is not responsible or liable for how you use the project assistance, advice, or deliverables. The entire responsibility for the project's application, submission, and consequences rests with you.</li>
+                     <li>Our service must not be used for any illegal activities or to engage in academic dishonesty.</li>
+                </ul>
+
+                <h2>4. Payment and Refund Policy</h2>
+                <ul>
+                    <li>All services provided by Tattva Yantrika are chargeable. A quote will be provided to you after a manual review of your project request and identity verification.</li>
+                    <li>All payments are processed securely through our designated payment gateway, <strong>Razorpay</strong>.</li>
+                    <li>Due to the investment of time, resources, and expert consultation inherent in our services, <strong>all payments made are final and strictly non-refundable under any circumstances.</strong> By making a payment, you acknowledge and agree to this policy.</li>
+                </ul>
+
+                <h2>5. Confidentiality</h2>
+                <p>We are committed to protecting your privacy. All personal information, identity documents, and project details submitted to us will be kept strictly confidential and will only be used for the purpose of verification and providing the requested service.</p>
+
+                <h2>6. Governing Law and Jurisdiction</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes, claims, or controversies arising out of or relating to these Terms or the Service shall be subject to the exclusive jurisdiction of the courts located in <strong>Uttar Pradesh, India.</strong></p>
+
+                <h2>7. Amendments to Terms</h2>
+                <p>Tattva Yantrika reserves the right to modify or replace these Terms at any time. We will notify users of any significant changes. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.</p>
+
+                <h2>8. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us through the official contact information provided on our website.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Tattva Yantrika. All rights reserved. | <a href="privacy-policy.htm">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
