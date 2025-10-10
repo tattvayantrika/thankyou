@@ -1,234 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tattva Yantrika Feedback & Testimonial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { min-height: 100vh; background: linear-gradient(135deg, #1d103b, #4a1d7a, #c89c5c); background-attachment: fixed; display: flex; justify-content: center; align-items: center; padding: 25px; }
-    .form-container { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 40px 35px; max-width: 700px; width: 100%; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; }
-    .logo-section { display: flex; align-items: center; margin-bottom: 35px; }
-    .logo-section img { width: 60px; height: 60px; border-radius: 15px; margin-right: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-    .logo-text h1 { font-size: 26px; font-weight: 700; background: linear-gradient(90deg, #ffde8a, #c190fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; }
-    .logo-text p { font-size: 16px; color: #ffde8a; }
-    form { display: flex; flex-direction: column; gap: 25px; }
-    .form-section { display: flex; flex-direction: column; }
-    label { font-weight: 600; margin-bottom: 8px; color: rgba(255, 255, 255, 0.9); }
-    .label-note { font-weight: 400; font-size: 12px; color: rgba(255, 255, 255, 0.7); margin-left: 5px; }
-    input[type="text"], input[type="email"], textarea { padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; outline: none; font-size: 15px; transition: all 0.3s ease; }
-    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.5); }
-    input[type="text"]:focus, input[type="email"]:focus, textarea:focus { background: rgba(255,255,255,0.15); border-color: #c190fd; box-shadow: 0 0 15px rgba(193, 144, 253, 0.5); }
-    textarea { resize: vertical; min-height: 100px; }
-    .choice-group { display: flex; flex-wrap: wrap; gap: 15px 20px; margin-top: 5px; }
-    .choice-group label { display: flex; align-items: center; cursor: pointer; background: rgba(255,255,255,0.1); padding: 12px 18px; border-radius: 12px; transition: background 0.3s; border: 1px solid transparent; margin-bottom: 5px; }
-    .choice-group label:hover { background: rgba(255,255,255,0.2); }
-    .choice-group input[type="radio"], .choice-group input[type="checkbox"] { display: none; }
-    .choice-group input[type="radio"] + span, .choice-group input[type="checkbox"] + span { margin-left: 12px; }
-    .custom-bullet { width: 20px; height: 20px; border: 2px solid #c190fd; border-radius: 50%; display: inline-block; position: relative; transition: all 0.3s; flex-shrink: 0; }
-    .custom-box { border-radius: 6px; }
-    .choice-group input[type="radio"]:checked + .custom-bullet::after { content: ''; width: 10px; height: 10px; background: #ffde8a; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .choice-group input[type="checkbox"]:checked + .custom-bullet::after { content: '✓'; font-size: 14px; font-weight: bold; color: #ffde8a; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .choice-group input:checked ~ span { color: #ffde8a; }
-    .choice-group input:checked + .custom-bullet { border-color: #ffde8a; }
-    .choice-group label:has(input:checked) { background: rgba(193, 144, 253, 0.2); border: 1px solid #c190fd; }
-    .submit-btn { padding: 15px; border-radius: 12px; border: none; background: linear-gradient(90deg, #ffde8a, #c190fd); color: #1d103b; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; }
-    .submit-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .loader { width: 18px; height: 18px; border: 3px solid #1d103b; border-bottom-color: transparent; border-radius: 50%; display: none; animation: rotation 1s linear infinite; }
-    @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    #form-message { text-align: center; padding: 15px; border-radius: 10px; margin-top: 15px; font-weight: 500; display: none; }
-    .message-success { background-color: #28a745; color: white; }
-    .message-error { background-color: #dc3545; color: white; }
-    @media (max-width: 768px) { .form-container { padding: 30px 25px; } .logo-section { flex-direction: column; text-align: center; } .logo-section img { margin-right: 0; margin-bottom: 15px; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Assistance - Tattva Yantrika</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/1a1a2e/00d4ff?text=TY">
+    
+    <style>
+        /* Root variables for a refined and compelling theme */
+        :root {
+            --color-gold: #FFD700;
+            --color-cyan-accent: #00d4ff;
+            --color-magenta-accent: #FF00FF;
+            --color-text-light: #ffffff;
+            --color-text-medium: #c0c0c0;
+            --color-text-dark: #1a1a2e;
+            --color-success: #00ff88;
+            --color-error: #ff5555;
+            --font-main: 'Segoe UI', 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* General body and reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: linear-gradient(135deg, #0d0d1a 0%, #10102e 25%, #1a1a3f 50%, #15224f 75%, #2a1a4a 100%); background-attachment: fixed; color: var(--color-text-light); line-height: 1.7; overflow-x: hidden; }
+
+        /* Modified Header - simplified for a focused form page */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 30, 0.5);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            z-index: 1000;
+        }
+        .nav-container { display: flex; justify-content: center; /* Centered logo */ align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { display: flex; align-items: center; gap: 0.8rem; }
+        .logo-text-group { line-height: 1.3; display: flex; flex-direction: column; }
+        .logo-english { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, var(--color-cyan-accent), var(--color-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .logo-hindi { font-size: 1.1rem; font-weight: 600; color: var(--color-gold); }
+        .logo-img { width: 60px; height: 60px; border-radius: 50%; }
+        
+        /* Main Content Wrapper */
+        .main-content { padding: 140px 2rem 2rem; display: flex; justify-content: center; align-items: flex-start; }
+        
+        /* Main Form Card */
+        .assistance-card { width: 100%; max-width: 800px; background: rgba(15, 15, 35, 0.6); border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.2); backdrop-filter: blur(15px); padding: 2.5rem; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5); }
+        .card-header { text-align: center; margin-bottom: 2.5rem; }
+        .card-title { font-size: 2.8rem; font-weight: 800; background: linear-gradient(45deg, var(--color-cyan-accent), var(--color-text-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+        .card-subtitle { font-size: 1.1rem; color: var(--color-text-medium); max-width: 600px; margin: 0 auto; }
+
+        /* Form Styling */
+        .assistance-form .form-section { margin-bottom: 2rem; }
+        .form-section-title { font-size: 1.5rem; font-weight: 600; color: var(--color-cyan-accent); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0, 212, 255, 0.3); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
+
+        .form-group label { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--color-text-medium); }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.9rem 1rem; background: rgba(10, 10, 30, 0.8); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: var(--color-text-light); font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s; }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #888; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--color-cyan-accent); box-shadow: 0 0 15px rgba(0, 212, 255, 0.3); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* Custom File Upload Styling */
+        .file-upload-wrapper { position: relative; width: 100%; }
+        .file-upload-btn { width: 100%; padding: 0.9rem 1rem; background: rgba(0, 212, 255, 0.1); border: 1px dashed rgba(0, 212, 255, 0.5); border-radius: 8px; color: var(--color-cyan-accent); cursor: pointer; text-align: center; transition: background-color 0.3s; }
+        .file-upload-btn:hover { background: rgba(0, 212, 255, 0.2); }
+        .file-upload-wrapper input[type="file"] { position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+        .file-name-display { margin-top: 0.75rem; font-size: 0.9rem; color: var(--color-text-medium); text-align: center; }
+        .disclaimer { font-size: 0.85rem; color: var(--color-text-medium); margin-top: 0.5rem; }
+
+        /* Checkbox Section Styling */
+        .confirmation-section { margin-top: 2rem; }
+        .checkbox-group { display: flex; align-items: center; margin-bottom: 1rem; }
+        .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-right: 12px; accent-color: var(--color-cyan-accent); }
+        .checkbox-group label { font-size: 0.95rem; color: var(--color-text-medium); }
+        .checkbox-group a { color: var(--color-cyan-accent); text-decoration: none; }
+        .checkbox-group a:hover { text-decoration: underline; }
+
+        /* Submit Button */
+        .submit-btn-wrapper { text-align: center; margin-top: 2.5rem; }
+        .submit-btn { display: inline-block; background: linear-gradient(45deg, var(--color-cyan-accent), var(--color-magenta-accent)); color: var(--color-text-light); padding: 1rem 3rem; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3); }
+        .submit-btn:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5); }
+        .submit-btn:disabled { background: #555; color: #999; cursor: not-allowed; transform: none; box-shadow: none; opacity: 0.6; }
+        
+        /* Loading Spinner and Status Messages */
+        #loader { display: none; text-align: center; margin-top: 1.5rem; }
+        .spinner { border: 4px solid rgba(255, 255, 255, 0.2); border-radius: 50%; border-top: 4px solid var(--color-cyan-accent); width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #status-message { margin-top: 1.5rem; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 500; display: none; }
+        .status-success { background: rgba(0, 255, 136, 0.15); border: 1px solid var(--color-success); color: var(--color-success); }
+        .status-error { background: rgba(255, 85, 85, 0.15); border: 1px solid var(--color-error); color: var(--color-error); }
+
+        /* Footer */
+        .footer { margin-top: 4rem; padding: 3rem 2rem 2rem; background: rgba(0, 0, 0, 0.3); text-align: center; }
+        .footer p { color: var(--color-text-medium); }
+        .footer a { color: var(--color-cyan-accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1.2rem; }
+            .main-content { padding: 150px 1.5rem 1.5rem; }
+            .assistance-card { padding: 1.5rem; }
+            .card-title { font-size: 2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="form-container">
-    <div class="logo-section">
-      <img src="LOGO-removebg-preview.png" alt="Logo">
-      <div class="logo-text">
-        <h1>Tattva Yantrika</h1>
-        <p>तत्त्व यांत्रिक</p>
-      </div>
-    </div>
-
-    <form id="feedbackForm">
-      <div class="form-section">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="Name" placeholder="What should we call you?" required>
-      </div>
-      
-      <div class="form-section">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" placeholder="How can we contact you?" required>
-      </div>
-      
-      <div class="form-section">
-        <label>Overall, how satisfied are you with the course? (1=Not Satisfied, 5=Very Satisfied)</label>
-        <div class="choice-group">
-          <label><input type="radio" name="Satisfaction" value="1" required><div class="custom-bullet"></div><span>1</span></label>
-          <label><input type="radio" name="Satisfaction" value="2"><div class="custom-bullet"></div><span>2</span></label>
-          <label><input type="radio" name="Satisfaction" value="3"><div class="custom-bullet"></div><span>3</span></label>
-          <label><input type="radio" name="Satisfaction" value="4"><div class="custom-bullet"></div><span>4</span></label>
-          <label><input type="radio" name="Satisfaction" value="5"><div class="custom-bullet"></div><span>5</span></label>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo" aria-label="Tattva Yantrika">
+                <img src="LOGO-removebg-preview.png" alt="Tattva Yantrika Logo" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-english">Tattva Yantrika</span>
+                    <span class="logo-hindi">तत्त्व यांत्रिक</span>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div class="form-section">
-        <label>Which topics did you find most valuable? <span class="label-note">(Select at least one)</span></label>
-        <div class="choice-group" id="valuable-topics">
-          <label><input type="checkbox" name="ValuableTopics" value="SolidWorks - Sketching"><div class="custom-bullet custom-box"></div><span>SolidWorks - Sketching</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="SolidWorks - Part Modelling"><div class="custom-bullet custom-box"></div><span>SolidWorks - Part Modelling</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="SolidWorks - Assembly"><div class="custom-bullet custom-box"></div><span>SolidWorks - Assembly</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="ANSYS - Static Structural"><div class="custom-bullet custom-box"></div><span>ANSYS - Static Structural</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="ANSYS - Explicit Dynamics"><div class="custom-bullet custom-box"></div><span>ANSYS - Explicit Dynamics</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="ANSYS - Thermal Analysis"><div class="custom-bullet custom-box"></div><span>ANSYS - Thermal Analysis</span></label>
-          <label><input type="checkbox" name="ValuableTopics" value="ANSYS - CFD"><div class="custom-bullet custom-box"></div><span>ANSYS - CFD</span></label>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="assistance-card">
+            <div class="card-header">
+                <h1 class="card-title">Expert Project Assistance</h1>
+                <p class="card-subtitle">Facing a challenge with your engineering project? Submit your query, and our team of experts will provide a professional, confidential, and timely solution.</p>
+            </div>
+
+            <form class="assistance-form" id="assistance-form">
+                <!-- Section 1: Personal and Academic/Professional Details -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Your Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group"><label for="fullName">Full Name</label><input type="text" id="fullName" name="fullName" placeholder="e.g., Anjali Sharma" required></div>
+                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="e.g., anjali.sharma@example.com" required></div>
+                        <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="e.g., +91 98765 43210" required></div>
+                        <div class="form-group"><label for="affiliation">College / Company Name</label><input type="text" id="affiliation" name="affiliation" placeholder="e.g., Indian Institute of Technology, Delhi" required></div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Project Details -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Project Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width"><label for="projectTitle">Project Title</label><input type="text" id="projectTitle" name="projectTitle" placeholder="A brief, clear title for your project" required></div>
+                        <div class="form-group full-width"><label for="projectDescription">Detailed Project Description</label><textarea id="projectDescription" name="projectDescription" placeholder="Please provide a thorough description of the problem, objectives, and any specific requirements." required></textarea></div>
+                        <div class="form-group"><label for="serviceType">Type of Assistance Needed</label><select id="serviceType" name="serviceType" required><option value="" disabled selected>Select a service...</option><option value="CAD Modeling">CAD Modeling & Design</option><option value="Simulation Setup">Simulation Setup & Meshing</option><option value="Results Interpretation">Results Interpretation & Analysis</option><option value="Report Writing">Report Writing & Documentation</option><option value="Full Project Assistance">Full Project Assistance (End-to-End)</option><option value="Other">Other (Please specify in description)</option></select></div>
+                        <div class="form-group"><label for="software">Relevant Software (if any)</label><input type="text" id="software" name="software" placeholder="e.g., ANSYS Fluent, SolidWorks"></div>
+                        <div class="form-group full-width">
+                            <label>Upload Supporting Project File (Optional)</label>
+                            <div class="file-upload-wrapper"><input type="file" id="projectFile" name="projectFile" accept="image/*,.pdf,.zip,.rar"><div class="file-upload-btn">Click to Upload Project File</div></div>
+                            <div class="file-name-display" data-for="projectFile">No file selected</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Verification & Confirmation -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Verification & Confirmation</h2>
+                     <div class="form-group full-width">
+                        <label>Upload College/Company ID Card</label>
+                        <div class="file-upload-wrapper"><input type="file" id="idCardFile" name="idCardFile" accept="image/*,.pdf" required><div class="file-upload-btn">Click to Upload ID</div></div>
+                        <div class="file-name-display" data-for="idCardFile">No file selected</div>
+                        <p class="disclaimer">Your ID is used for verification only and is kept strictly confidential.</p>
+                    </div>
+                    <div class="confirmation-section">
+                        <div class="checkbox-group"><input type="checkbox" id="info-correct" name="info-correct" required><label for="info-correct">I confirm that all information provided is accurate.</label></div>
+                        <div class="checkbox-group"><input type="checkbox" id="terms" name="terms" required><label for="terms">I agree to the <a href="terms-of-service.htm" target="_blank">Terms and Conditions</a>.</label></div>
+                    </div>
+                </div>
+                
+                <!-- Submission -->
+                <div class="submit-btn-wrapper"><button type="submit" class="submit-btn" id="submit-button" disabled>Submit for a Free Quote</button></div>
+                <div id="loader"><div class="spinner"></div></div>
+                <div id="status-message"></div>
+            </form>
         </div>
-      </div>
-      
-      <div class="form-section">
-        <label for="best-thing">What did you like most about the course?</label>
-        <textarea id="best-thing" name="LikedMost" placeholder="e.g., The practical examples, the instructor's energy..." required></textarea>
-      </div>
-      
-      <div class="form-section">
-        <label for="testimonial">In one sentence, how would you describe your experience with Tattva Yantrika?</label>
-        <textarea id="testimonial" name="Testimonial" placeholder="This will help others understand the value of the course." required></textarea>
-      </div>
-      
-      <div class="form-section">
-        <label>How likely are you to recommend this course to a friend or colleague?</label>
-        <div class="choice-group">
-          <label><input type="radio" name="Recommendation" value="Very Likely" required><div class="custom-bullet"></div><span>Very Likely</span></label>
-          <label><input type="radio" name="Recommendation" value="Likely"><div class="custom-bullet"></div><span>Likely</span></label>
-          <label><input type="radio" name="Recommendation" value="Unlikely"><div class="custom-bullet"></div><span>Unlikely</span></label>
-        </div>
-      </div>
-      
-      <div class="form-section">
-        <label for="suggestions">Any suggestions for how we can improve?</label>
-        <textarea id="suggestions" name="Suggestions" placeholder="All feedback, big or small, is welcome!" required></textarea>
-      </div>
-      
-      <div class="form-section">
-        <label>Sharing Your Experience</label>
-        <div class="choice-group">
-          <label>
-            <input type="checkbox" name="Permission" value="Yes" required>
-            <div class="custom-bullet custom-box"></div>
-            <span>To help others see the value of this course, may we feature your encouraging words on our platform? (We'll only use your first name).</span>
-          </label>
-        </div>
-      </div>
-      
-      <button type="submit" class="submit-btn" id="submitButton" disabled>
-        <span id="buttonText">Submit Feedback</span>
-        <div class="loader" id="loader"></div>
-      </button>
-    </form>
-    
-    <div id="form-message"></div>
-  </div>
+    </main>
 
-<script>
-  const form = document.getElementById('feedbackForm');
-  const submitButton = document.getElementById('submitButton');
-  const buttonText = document.getElementById('buttonText');
-  const loader = document.getElementById('loader');
-  const formMessage = document.getElementById('form-message');
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Tattva Yantrika. All rights reserved. | <a href="privacy-policy.htm">Privacy Policy</a></p>
+    </footer>
 
-  const validateForm = () => {
-    const requiredTextInputs = form.querySelectorAll('input[type="text"][required], input[type="email"][required], textarea[required]');
-    let allTextFilled = true;
-    requiredTextInputs.forEach(input => {
-      if (input.value.trim() === '') { allTextFilled = false; }
-    });
-    const satisfactionChecked = form.querySelector('input[name="Satisfaction"]:checked') !== null;
-    const recommendationChecked = form.querySelector('input[name="Recommendation"]:checked') !== null;
-    const topicsChecked = form.querySelectorAll('input[name="ValuableTopics"]:checked').length > 0;
-    const permissionChecked = form.querySelector('input[name="Permission"]').checked;
-    if (allTextFilled && satisfactionChecked && recommendationChecked && topicsChecked && permissionChecked) {
-      submitButton.disabled = false;
-    } else {
-      submitButton.disabled = true;
-    }
-  };
-  
-  form.addEventListener('input', validateForm);
-  form.addEventListener('change', validateForm);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('assistance-form');
+            const submitButton = document.getElementById('submit-button');
+            const loader = document.getElementById('loader');
+            const statusMessage = document.getElementById('status-message');
+            
+            const formInputs = Array.from(form.querySelectorAll('input[required], textarea[required], select[required]'));
+            const checkBoxes = Array.from(form.querySelectorAll('input[type="checkbox"][required]'));
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    submitButton.disabled = true;
-    buttonText.textContent = 'Submitting...';
-    loader.style.display = 'block';
-    formMessage.style.display = 'none';
+            function validateForm() {
+                const allInputsValid = formInputs.every(input => {
+                    if (input.type === 'file') return input.files.length > 0;
+                    if (input.type === 'select-one') return input.value !== "";
+                    return input.value.trim() !== '';
+                });
+                const allCheckBoxesChecked = checkBoxes.every(checkbox => checkbox.checked);
+                submitButton.disabled = !(allInputsValid && allCheckBoxesChecked);
+            }
 
-    const formData = new FormData(form);
-    
-    // Collect checked topics
-    const valuableTopicsCheckboxes = document.querySelectorAll('input[name="ValuableTopics"]:checked');
-    const topics = Array.from(valuableTopicsCheckboxes).map(cb => cb.value);
-    
-    // Build the data object
-    const data = {
-      Name: formData.get('Name'),
-      Email: formData.get('Email'),
-      Satisfaction: formData.get('Satisfaction'),
-      ValuableTopics: topics.join(', '),
-      LikedMost: formData.get('LikedMost'),
-      Testimonial: formData.get('Testimonial'),
-      Recommendation: formData.get('Recommendation'),
-      Suggestions: formData.get('Suggestions'),
-      Permission: formData.get('Permission') || 'No',
-      Timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
-    };
+            formInputs.forEach(input => input.addEventListener('input', validateForm));
+            checkBoxes.forEach(checkbox => checkbox.addEventListener('change', validateForm));
+            
+            // Handle file name display for all file inputs
+            document.querySelectorAll('input[type="file"]').forEach(fileInput => {
+                fileInput.addEventListener('change', () => {
+                    const display = document.querySelector(`.file-name-display[data-for="${fileInput.id}"]`);
+                    if (fileInput.files.length > 0) {
+                        display.textContent = fileInput.files[0].name;
+                    } else {
+                        display.textContent = 'No file selected';
+                    }
+                    validateForm(); // Re-validate when a file is added/removed
+                });
+            });
 
-    // REPLACE WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz-LKT6OMFNagO3R7WYxNISxWmUwckCPAmWT7PBQPp852eQpM4AcEKa_yyNXZwrn0M/exec";
-    
-    fetch(WEB_APP_URL, {
-      redirect: "follow",
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8',
-      },
-    })
-    .then(response => response.json())
-    .then(result => {
-      if (result.result === "success") {
-        formMessage.textContent = 'Thank you! Your feedback has been submitted successfully.';
-        formMessage.className = 'message-success';
-        form.reset();
-        validateForm();
-      } else {
-        throw new Error(result.message || 'An unknown error occurred.');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      formMessage.textContent = 'Oops! Something went wrong. Please try again later.';
-      formMessage.className = 'message-error';
-      submitButton.disabled = false;
-    })
-    .finally(() => {
-      buttonText.textContent = 'Submit Feedback';
-      loader.style.display = 'none';
-      formMessage.style.display = 'block';
-      setTimeout(() => { 
-        if (formMessage.classList.contains('message-success')) {
-          formMessage.style.display = 'none'; 
-        }
-      }, 6000);
-    });
-  });
-</script>
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                submitButton.disabled = true;
+                loader.style.display = 'block';
+                statusMessage.style.display = 'none';
 
+                const idCardFile = document.getElementById('idCardFile').files[0];
+                const projectFile = document.getElementById('projectFile').files[0];
+                
+                const getBase64 = (file) => {
+                    return new Promise((resolve, reject) => {
+                        if (!file) {
+                            resolve(null); // Resolve with null if file is optional and not present
+                        } else {
+                            const reader = new FileReader();
+                            reader.readAsDataURL(file);
+                            reader.onload = () => resolve({
+                                name: file.name,
+                                content: reader.result.split(',')[1],
+                                type: file.type
+                            });
+                            reader.onerror = error => reject(error);
+                        }
+                    });
+                };
+
+                Promise.all([getBase64(idCardFile), getBase64(projectFile)])
+                    .then(([idCardData, projectFileData]) => {
+                        const formData = {
+                            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+                            fullName: document.getElementById('fullName').value,
+                            email: document.getElementById('email').value,
+                            phone: document.getElementById('phone').value,
+                            affiliation: document.getElementById('affiliation').value,
+                            projectTitle: document.getElementById('projectTitle').value,
+                            projectDescription: document.getElementById('projectDescription').value,
+                            serviceType: document.getElementById('serviceType').value,
+                            software: document.getElementById('software').value,
+                            idCard: idCardData,
+                            projectFile: projectFileData
+                        };
+
+                        const webAppUrl = 'https://script.google.com/macros/s/AKfycby2zLOOLcalpuzzc9JEyc3tgIwjwP-VhXtnN_3Aunmf-QeS58yw2vQZZaYsxcClHT0M5w/exec'; // Replace this
+
+                        return fetch(webAppUrl, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            body: JSON.stringify(formData)
+                        });
+                    })
+                    .then(() => {
+                        handleResponse(true, 'Your request has been submitted successfully! We will get back to you with a quote shortly.');
+                        form.reset();
+                        document.querySelectorAll('.file-name-display').forEach(d => d.textContent = 'No file selected');
+                        validateForm();
+                    })
+                    .catch(error => {
+                        handleResponse(false, 'An error occurred. Please check your connection and try again.');
+                        console.error('Error:', error);
+                    });
+            });
+
+            function handleResponse(isSuccess, message) {
+                loader.style.display = 'none';
+                submitButton.disabled = false; // Keep it disabled after reset, validateForm will handle it
+                validateForm();
+                
+                statusMessage.textContent = message;
+                statusMessage.className = `status-${isSuccess ? 'success' : 'error'}`;
+                statusMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
 
